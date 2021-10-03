@@ -95,6 +95,9 @@ That manage DOM change for us
 
 ## Typescript
 
+this is the programming language we will use throughout this course.  
+
+
 
 
 
