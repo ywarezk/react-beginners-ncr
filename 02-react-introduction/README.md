@@ -1,5 +1,43 @@
 # React introduction
 
+hello world
+
+## ReactElement
+
+this is a javascript object.  
+React can tranform that javascript object to a ui
+
+## React.createElement
+
+```javascript
+React.createElement(
+	type, // what do i need to draw, string, Function
+	props, // TBD
+	children // 
+) : ReactElement
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Creating a playground with only react in it, to create a simple website while covering react basics.
 
 ## React.createElement and ReactElement
