@@ -74,28 +74,71 @@ alot of organization works with private npm
 > npm login
 ```
 
+## What is Typescript
 
+- typescript is a programming language
+- the file extension of a typescript file: `*.ts`
+- almost no one can run typescript
+- we need to compile our `ts` files.
 
+       compile with typescript
+*.ts ----------------------------> *.js
 
+- microsoft create typescript
+- typescript is open source
 
+js is a dynamic language
 
+typescript can help take javascript and add staticness to a dynamic language
 
+- typescript is an *almost* superset of javascript
+- typescript is very easy to learn
 
+```
+> npm install jquery
+> npm install @types/jquery -D
+```
 
+## Install typescript
 
-
-
-## About Typescript
+```
+> npm init --yes
+> npm install typescript -D
+```
 
 ## tsconfig.json
 
-## Running and debugging
+configuration file for `typescript`
 
-## Variables
+- typescript will know how to compile our JS files
 
-## Common types
+```
+> npx tsc --init
+```
 
-## modules
+this command will create a default configuration file `tsconfig.json` for the typescript compiler.
 
-## Promises
+## NPX
+
+Node Package Executer.  
+
+some libraries when you install them ship with extra cli commands.  
+npx will search `node_modules/.bin` for those commands.
+
+## Compiling the files in the project
+
+```
+> npx tsc -w
+```
+
+
+
+
+
+
+
+
+
+
+
 
