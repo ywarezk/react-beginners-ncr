@@ -30,7 +30,7 @@ function Footer() {
 
 function LoginPage() {
     return (
-        <div>
+        <div className="container">
             <Header />
 
             <Login />
