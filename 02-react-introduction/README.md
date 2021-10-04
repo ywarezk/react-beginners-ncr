@@ -17,6 +17,33 @@ React.createElement(
 ) : ReactElement
 ```
 
+## JSX
+
+Javascript as XML
+
+In our javascript/typescript code we can use syntax that is very similar to HTML
+
+```js
+<h1>
+	<span>
+		hello world
+	</span>
+</h1>
+```
+
+
+
+We use this syntax to descript how our react components look like.
+
+			Compile JS       		Compiled JS
+`hello.js` -------------> Babel -----------------> Browser
+
+babel will transform the following syntax to this:
+
+```js
+React.createElement(...)
+```
+
 
 
 
