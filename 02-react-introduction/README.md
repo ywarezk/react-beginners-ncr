@@ -46,7 +46,7 @@ React.createElement(...)
 
 ## H.W
 
-go over the `flexbox` css styles:
+go over the `flexbox` css styles documentation:
 
 [mdn flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
 
