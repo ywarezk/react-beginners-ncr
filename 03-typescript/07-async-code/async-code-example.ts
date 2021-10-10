@@ -38,12 +38,14 @@ console.log('after timer');
 // --------X---->
 
 const timerExample: Promise<string> = new Promise((resolveZozo, reject) => {
+	// axios
+	// fetch
 	
 	// your async code will run in this callback
 	setTimeout(() => {
-		// resolveZozo('hello world');
+		resolveZozo('hello world');
 		// resolveZozo([])
-		reject(new Error('something happened'))
+		// reject(new Error('something happened'))
 		
 		/*
 		if (response.status === 200) {
@@ -100,3 +102,9 @@ const promiseWithName: Promise<string> = dogName();
 promiseWithName.then((pigletshvily) => {
 	console.log(pigletshvily);
 })
+
+/**
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+ */

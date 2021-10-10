@@ -1,5 +1,6 @@
 # Typescript
 
+Programming language
 First we need to install typescript
 
 ## npm - node package manager
