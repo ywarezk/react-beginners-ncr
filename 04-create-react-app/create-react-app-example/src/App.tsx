@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Header } from './Header';
+import { Login } from './Login';
 
 function App() {
 	return (
@@ -10,6 +10,12 @@ function App() {
 			<h1>
 				Hello React
 			</h1>
+			
+			<h2>
+				Material example
+			</h2>
+			
+			<Login />
 		</div>
 	);
 }

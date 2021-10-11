@@ -4,6 +4,7 @@ import { sayHello, message as myMessage } from './modules-example';
 // import * as allThingsInModule from './modules-example';
 
 import MyPerson from './modules-example';
+import { Accordion } from '@mui/material';
 
 
 // allThingsInModule.sayHello();
