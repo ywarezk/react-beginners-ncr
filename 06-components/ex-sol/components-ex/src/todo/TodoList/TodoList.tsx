@@ -2,15 +2,18 @@
  * Creating a hard coded todo list
  */
  
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { List, ListItem, ListItemText, Typography } from '@mui/material';
+import { Task } from '../task.model';
+import { taskService } from '../task.service';
  
 export const TodoList: FC = () => {
-	const todoList = [
-		{ id: 1, title: 'Pigletshvily', description: 'Walk with Pigletshvily' },
-		{ id: 2, title: 'Sweetness', description: 'Walk with Sweetness' },
-		{ id: 3, title: 'Groceries', description: 'Go to the supermarket' },
-	]
+	const [todoList, setTodoList] = useState<Task[]>([]);
+	
+	useEffect(() => {
+		taskService.getTasks()
+			.then((tasks) => setTodoList(tasks));
+	}, [])
 	
 	return (
 		<List>
