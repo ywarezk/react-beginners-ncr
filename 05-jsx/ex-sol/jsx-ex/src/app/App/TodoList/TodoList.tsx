@@ -5,6 +5,8 @@
 import { FC } from 'react';
 import { List, ListItem, ListItemText, Typography } from '@mui/material';
  
+// const hello: string = 'hello'
+ 
 export const TodoList: FC = () => {
 	const todoList = [
 		{ id: 1, title: 'Pigletshvily', description: 'Walk with Pigletshvily' },
@@ -16,7 +18,7 @@ export const TodoList: FC = () => {
 		<List>
 			{
 				todoList.map(item => (
-					<ListItem key={item.id}>
+					<ListItem key={item.id} >
 						<ListItemText>
 							<Typography variant="h2">
 								{ item.title }

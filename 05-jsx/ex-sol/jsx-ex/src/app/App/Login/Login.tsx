@@ -11,7 +11,7 @@ import {
 import styles from './Login.module.scss';
 
 export const Login: FC = () => {
-	let errorMessage = 'Something happened'
+	let errorMessage = 'Something happened hello'
 	
 	/**
 	 * This is called when the login event is submitted
@@ -47,6 +47,8 @@ export const Login: FC = () => {
 					<Button color="primary" variant="contained" type="submit">Login</Button>
 				</CardActions>
 				{
+					// condition ? something : somethingelse
+					// condition ? Alert : null
 					errorMessage && (
 						<Alert severity="error">
 							{ errorMessage }
