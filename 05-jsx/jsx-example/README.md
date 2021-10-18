@@ -76,7 +76,9 @@ between tags - {} to return ReactNode
 }
 ```
 
+## 4. One parent element
 
+jsx must be wrapped in one parent element
 
 
 
