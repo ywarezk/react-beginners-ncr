@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, Dispatch, SetStateAction } from "react";
 import {
 	TextField,
 	Button,
@@ -13,8 +13,11 @@ import { useFormik } from 'formik';
 import { loginSchema } from './login.validation';
 import { userService } from '../user.service';
 import { useHistory } from 'react-router-dom';
+import { User } from "..";
 
-export const Login: FC = () => {
+export const Login: FC<{cb: Dispatch<SetStateAction<User | undefined>>}> = ({
+	cb
+}) => {
 	const [errorMessage, setErrorMessage] = useState('')
 	const history = useHistory()
 
@@ -26,10 +29,12 @@ export const Login: FC = () => {
 		},
 		onSubmit: async (values) => {
 			try {
-				await userService.login(values);
+				const user = await userService.login(values);
+				cb(user);
 				setErrorMessage('');
 				history.push('/todo');
 			} catch(err: any) {
+				cb(undefined);
 				setErrorMessage(err.message);
 			}			
 		}
