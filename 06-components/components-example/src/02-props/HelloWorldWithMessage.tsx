@@ -6,6 +6,12 @@ interface HelloWorldWithMessageProps {
 	
 }
 
+/*
+const hello: Function = () => {
+	
+}
+*/
+
 // props => {name: 'Yigal', age: 45}
 export const HelloWorldWithMessage: FC<HelloWorldWithMessageProps> = ({
 	name, 

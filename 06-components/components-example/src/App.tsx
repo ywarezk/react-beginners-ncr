@@ -4,8 +4,11 @@ import { HelloWorldWithMessage } from './02-props/HelloWorldWithMessage';
 import { HelloWithChildren } from './02-props/HelloWithChildren';
 import { OffOn } from './03-state-machine/OffOn';
 import { Counter } from './04-lifecycle/Counter';
+import { useState } from 'react';
 
 function App() {
+	const [isCounterShowing, setIsCounterShowing] = useState(true);
+	
 	return (
 		<div className="App">
 			<h1>Hello world component</h1>
@@ -41,7 +44,14 @@ function App() {
 				Lifecycle of a component
 			</h1>
 			
-			<Counter />
+			{
+				isCounterShowing && <Counter initialCounter={20} />
+			}
+			
+			
+			<button onClick={() => setIsCounterShowing(!isCounterShowing)}>
+				Toggle counter
+			</button>
 		</div>
 	);
 }
