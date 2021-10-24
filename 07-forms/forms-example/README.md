@@ -26,6 +26,10 @@ library that helps us handle forms
 > npm install formik
 ```
 
+### Formik without entering the events yourself
+
+[formik auto link events](https://formik.org/docs/examples/basic)
+
 ## H.W
 
 - go over the docs about how to deal with forms:
