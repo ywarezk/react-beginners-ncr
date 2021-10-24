@@ -24,6 +24,7 @@ library that helps us handle forms
 
 ```
 > npm install formik
+> npm install @types/react -D
 ```
 
 ### Formik without entering the events yourself
