@@ -10,9 +10,13 @@ import { taskService } from '../task.service';
 export const TodoList: FC = () => {
 	const [todoList, setTodoList] = useState<Task[]>([]);
 	
+	/**
+	 * this function will run once
+	 * after the first render
+	 */
 	useEffect(() => {
 		taskService.getTasks()
-			.then((tasks) => setTodoList(tasks));
+			.then(tasks => setTodoList(tasks));
 	}, [])
 	
 	return (
