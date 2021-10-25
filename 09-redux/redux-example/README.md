@@ -1,46 +1,150 @@
-# Getting Started with Create React App
+# Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`useState` private state of component
 
-## Available Scripts
+```
+localStorage.setItem('user', JSON.stringify(user));
+```
 
-In the project directory, you can run:
+Header
 
-### `yarn start`
+if changing the localstorage header will not call render
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+header will rerender
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- setState
+App - setState
 
-### `yarn test`
+```
+history.push('/?user=...')
+```
+         App - const [user, setUser] = useState()
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Login			Header
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Redux = {user: null}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+login = { user: {firstName ....}}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## What is Redux
 
-### `yarn eject`
+A Predictable State Container for JS Apps  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This library manage the global data of our app
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## State
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+s0 ---> s1 ----> s5
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+how certain data looks like in a certain time
 
-## Learn More
+s0
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+{
+	user: null
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+s1
+
+```
+{
+	user: {firstName: 'P'}
+}
+```
+
+## Store
+
+Store is the object that holds the state.  
+The state is private.  
+
+
+redux state
+
+```
+{
+	amountMoney: 0
+}
+```
+
+### store.dispatch
+
+Will perform a change in the state.
+
+```
+store.dispatch(action)
+```
+
+## Action
+
+action describes a change we want to perform in the state
+
+```typescript
+{
+	type: string, // id of the action
+	payload: any // additional data needed to change the state
+}
+```
+
+## Reducer
+
+reducer in programming language.  
+usually you place in a `reduce`
+
+aggregation on an array.
+
+Takes an array an run a calculation on every array element while keeping the last calculation
+
+```
+reducer: (accumalator, current) => some calculation
+```
+
+### Reducer in redux
+
+```
+const reducer = function(currentStateOfRedux, action) {
+	needs to return the next state
+}
+```
+
+```
+[
+	action1 = {type: 'user logs in', payload: any},
+	action2 = {type: 'user clicked a button', payload: any},
+	action3 = {type: 'logout', payload: any},
+] => currentStateState
+```
+
+### Redux bank account
+
+`Amount` => display the bank amount
+
+`Deposit` => increase the bank amout
+
+s0
+
+```
+{
+	bank: {
+		amount: 0
+	}
+}
+```
+
+s1
+
+```
+{
+	bank: {
+		amount: 10
+	}
+}
+```
+
+## Install redux
+
+```bash
+> npm install redux @reduxjs/toolkit react-redux
+```
