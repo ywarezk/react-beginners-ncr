@@ -45,7 +45,33 @@ We will use `react-router` library, for routing in our react application.
 
 ```bash
 > npm install react-router-dom
+> npm install @types/react-router-dom -D
+> npm install @types/react -D
 ```
+
+## Router
+
+Javascript object.  
+incharge of changing the url and tracking the current url that we are in.  
+
+### BrowserRouter
+
+is the most common router.  
+Regular url with folder /login/user
+
+### HashRouter
+
+url that start with hash: `/#/login/user`
+
+## condition display component if url match
+
+`<Route>`
+
+`<Switch>`
+
+renders a component if a condition of the url is met
+
+
 
 
 ## what routing is used in the web
