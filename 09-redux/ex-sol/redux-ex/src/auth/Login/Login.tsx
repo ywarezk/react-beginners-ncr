@@ -14,12 +14,13 @@ import { loginSchema } from './login.validation';
 import { userService } from '../user.service';
 import { useHistory } from 'react-router-dom';
 import { User } from "..";
+import { useDispatch } from "react-redux";
+import { authSlice, login } from '../auth.slice';
 
 export const Login: FC<{cb: Dispatch<SetStateAction<User | undefined>>}> = ({
 	cb
 }) => {
-	const [errorMessage, setErrorMessage] = useState('')
-	const history = useHistory()
+	const dispatch = useDispatch();
 
 	const formik = useFormik({
 		validationSchema: loginSchema,
@@ -28,15 +29,7 @@ export const Login: FC<{cb: Dispatch<SetStateAction<User | undefined>>}> = ({
 			password: ''
 		},
 		onSubmit: async (values) => {
-			try {
-				const user = await userService.login(values);
-				cb(user);
-				setErrorMessage('');
-				history.push('/todo');
-			} catch(err: any) {
-				cb(undefined);
-				setErrorMessage(err.message);
-			}			
+			dispatch(login(values));
 		}
 	})
 
