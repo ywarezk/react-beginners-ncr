@@ -43,10 +43,11 @@ export const Login: FC = () => {
 	return (
 		<Card className={styles.card}>
 			<CardHeader title="Login" className={styles.header} />
-			<form noValidate onSubmit={formik.handleSubmit}>
+			<form data-testid="loginForm" noValidate onSubmit={formik.handleSubmit}>
 				<CardContent>
 					<div className={styles.textFieldWrapper}>
 						<TextField
+							data-testid="emailInput"
 							className={styles.textField}
 							type="email"
 							name="email"
@@ -59,6 +60,7 @@ export const Login: FC = () => {
 					</div>
 					<div className={styles.textFieldWrapper}>
 						<TextField
+							data-testid="passwordInput"
 							className={styles.textField}
 							type="password"
 							name="password"
