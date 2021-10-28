@@ -7,11 +7,13 @@ import { AppBar, Toolbar, Typography } from '@mui/material';
 import pigletSweetness from './piglet-sweetness.jpeg';
 import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
-import { User } from '../../../auth';
+import { useSelector } from 'react-redux';
+import { State } from '../../store';
+import { User, authUserSelector } from '../../../auth';
  
-export const Header: FC<{user: User | undefined}> = ({
-	user = {firstName: 'Guest'}
-}) => {
+export const Header: FC = () => {
+	const user = useSelector<State, User | null>(authUserSelector);
+	
 	return (
 		<AppBar>
 			<Toolbar className={styles.toolbar}>
@@ -23,7 +25,7 @@ export const Header: FC<{user: User | undefined}> = ({
 					/>
 				</Link>
 				<h3>
-					Hello {user.firstName}
+					Hello {user ? user.firstName : 'Guest'}
 				</h3>
 				<Typography>
 					Login

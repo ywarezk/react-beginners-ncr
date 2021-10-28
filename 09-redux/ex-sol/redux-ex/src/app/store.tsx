@@ -3,9 +3,13 @@
  */
  
 import { configureStore } from '@reduxjs/toolkit';
-import { authSlice } from '../auth';
+import { authSlice, AuthState } from '../auth';
 
-export const store = configureStore({
+export interface State {
+	auth: AuthState
+}
+
+export const store = configureStore<State>({
 	reducer: {
 		auth: authSlice.reducer
 	}

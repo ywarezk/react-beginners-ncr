@@ -1,4 +1,4 @@
-import { FC, useState, Dispatch, SetStateAction } from "react";
+import { FC, useEffect } from "react";
 import {
 	TextField,
 	Button,
@@ -11,16 +11,17 @@ import {
 import styles from './Login.module.scss';
 import { useFormik } from 'formik';
 import { loginSchema } from './login.validation';
-import { userService } from '../user.service';
+import { useDispatch, useSelector } from "react-redux";
+import { login } from '../auth.slice';
+import { State } from "../../app/store";
+import { authErrorSelector, authUserSelector, User } from "..";
 import { useHistory } from 'react-router-dom';
-import { User } from "..";
-import { useDispatch } from "react-redux";
-import { authSlice, login } from '../auth.slice';
 
-export const Login: FC<{cb: Dispatch<SetStateAction<User | undefined>>}> = ({
-	cb
-}) => {
+export const Login: FC = () => {
 	const dispatch = useDispatch();
+	const errorMessage = useSelector<State, string>(authErrorSelector);
+	const user = useSelector<State, User | null>(authUserSelector);
+	const history = useHistory()
 
 	const formik = useFormik({
 		validationSchema: loginSchema,
@@ -31,7 +32,13 @@ export const Login: FC<{cb: Dispatch<SetStateAction<User | undefined>>}> = ({
 		onSubmit: async (values) => {
 			dispatch(login(values));
 		}
-	})
+	});
+	
+	useEffect(() => {
+		if (user) {
+			history.push('/todo')
+		}
+	}, [ user ]);
 
 	return (
 		<Card className={styles.card}>

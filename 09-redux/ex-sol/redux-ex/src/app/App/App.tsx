@@ -16,13 +16,11 @@ import { Provider } from 'react-redux';
 import { store } from '../store';
 
 export function App() {
-	const [user, setUser] = useState<User | undefined>(undefined);
-	
 	return (
 		<Provider store={store}>
 			<BrowserRouter>
 				<div className={styles.app}>
-					<Header user={user} />
+					<Header />
 					<Grid
 						className={styles.grid}
 						container
@@ -33,7 +31,7 @@ export function App() {
 							<div className={styles.loginWrapper}>
 								<Switch>
 									<Route path="/" exact>
-										<Login cb={setUser} />
+										<Login />
 									</Route>
 									<Route path="/todo">
 										<TodoList />
