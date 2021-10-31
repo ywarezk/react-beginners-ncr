@@ -191,6 +191,12 @@ s2
 {
 	bank: {
 		amount: 20
+	},
+	auth: {
+		
+	},
+	dashboard: {
+		
 	}		
 }
 ```
@@ -208,3 +214,16 @@ s2
 	}
 }
 ```
+
+## Connect redux to my react application
+
+1. create the store using the `configureStore` function
+
+2. connect the store to react
+
+## Redux developer tools
+
+Adds a new tab to the chrome developer tools `Redux`.  
+Allows you to examine what the redux store contains
+
+[Redux dev tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
