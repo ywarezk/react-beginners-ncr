@@ -5,6 +5,11 @@
  
 import { createSelector } from '@reduxjs/toolkit';
 
+
+/*
+const user = useSelector((state) => state.auth.user)
+*/
+
 export const authSelector = state => state.auth;
 
 export const authUserSelector = createSelector(
