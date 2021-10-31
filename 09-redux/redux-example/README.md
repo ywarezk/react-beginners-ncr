@@ -148,3 +148,63 @@ s1
 ```bash
 > npm install redux @reduxjs/toolkit react-redux
 ```
+
+
+## Simplify redux
+
+					Action
+react components -------------> Store
+
+components  <------------------ Store
+
+There are times when Actions should be born not from UI.  
+
+manage change in redux state that is not from the UI:
+
+- [redux sage](https://redux-saga.js.org/)
+- [redux epics](https://redux-observable.js.org/docs/basics/Epics.html)
+
+## Bank application
+
+Redux:
+
+s0
+```javascript
+{
+	bank: {
+		amount: 0
+	}		
+}
+```
+
+s1
+```javascript
+{
+	bank: {
+		amount: 10
+	}		
+}
+```
+
+s2
+```javascript
+{
+	bank: {
+		amount: 20
+	}		
+}
+```
+
+## Install redux
+
+```bash
+> npm install redux react-redux @reduxjs/toolkit
+```
+
+```
+{
+	auth: {
+		user: null
+	}
+}
+```

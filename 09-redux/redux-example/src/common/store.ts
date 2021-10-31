@@ -1,4 +1,0 @@
-/**
- * Create redux store
- */
- 
