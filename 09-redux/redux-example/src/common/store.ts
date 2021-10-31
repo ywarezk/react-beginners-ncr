@@ -4,7 +4,14 @@
  
 // import { createStore } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
+import { bankSlice, BankState } from '../bank/bank.slice';
 
-export const store = configureStore({
-	reducer: (state) => state
+export interface State {
+	bank: BankState
+}
+
+export const store = configureStore<State>({
+	reducer: {
+		bank: bankSlice.reducer 
+	}
 })
